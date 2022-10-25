@@ -67,3 +67,40 @@ const text = "Red! Red. I like red, green, and yellow.";
 const word = "Red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 3
+
+## Description: removeCurseWords()
+
+Test: "It should return true if the offensive word is in the passage."
+Code:
+const curse = "zoinks";
+const text = "zoinks muppeteer My hamburgers!";
+removeCurseWords(text);
+Expected Output: true;
+
+Test: "It should return true if any offensive words are in the passage."
+Code:
+const curse = "zoinks, muppeteer, biffaroni, loopdaloop";
+const text = "zoinks muppeteer My hamburgers!";
+removeCurseWords(curse,text);
+Expected Output: true;
+
+Test: "It should return the number of offensive words in the passage."
+Code:
+const curses = "zoinks, muppeteer, biffaroni, loopdaloop";
+const text = "Zoinks! Muppeteer! My hamburgers!";
+removeCurseWords(text);
+Expected Output: 2;
+
+Test: "It should omit offensive words from a text passage."
+Code:
+const curse = "zoinks, muppeteer, biffaroni, loopdaloop";
+const text = "Zoinks! Muppeteer! My hamburgers!";
+removeCurseWords(text);
+Expected Output: "My hamburgers!";
+
+Test: "It should omit extra spaces within the text passage"
+Code:
+const curse = "zoinks, muppeteer, biffaroni, loopdaloop";
+const text = "Zoinks! Muppeteer! My loopdaloop hamburgers!";
+removeCurseWords(text);
+Expected Output: "My hamburgers!";
